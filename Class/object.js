@@ -79,3 +79,51 @@ var product = function () {
 };
 // Testing the product function with different numbers
 console.log(product(2, 3, 4, 6)); // 144 (2 * 3 * 4 * 6 = 144)
+//arrow function
+console.log("Arrow function demo");
+var numbers11 = [1, 2, 3, 4, 5];
+var square = function (x) { return x * x; };
+// Testing the square function
+console.log(square(5)); // 25
+// Using the square function with an array of numbers
+var squares = numbers11.map(square);
+console.log(squares); // [0, 16, 25, 36, 9]
+// Using the square function with an array of numbers
+var mutiply = function (x, y) { return x * y; };
+var numbers12 = [1, 2, 3, 4, 5];
+var productOfNumbers = numbers12.reduce(mutiply);
+console.log(productOfNumbers); // 120 (1 * 2 * 3 * 4 * 5 = 120)
+var myArray = [];
+for (var i = 0; i < 10; i++) {
+    myArray.push(function () { return i; });
+}
+console.log(myArray); // Array of functions that return the value of i
+// Testing the functions in myArray
+for (var j = 0; j < 10; j++) {
+    console.log("".concat(j, " -> ").concat(myArray[j]())); // 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
+}
+// let is a block-scoped variable declaration
+var blockScopedVariable = "I am block scoped";
+//difference between var and let
+// var is function-scoped or globally scoped, while let is block-scoped 
+// var can be redeclared and updated, while let can only be updated
+// var can be accessed before its declaration due to hoisting, while let cannot 
+// let is not hoisted in the same way as var, so it cannot be accessed before its declaration
+//
+// const is a block-scoped variable declaration that cannot be reassigned
+// const is used for variables that should not change
+// const variables must be initialized at the time of declaration
+// const variables cannot be redeclared or updated
+// const variables can be used to create constants, such as mathematical constants or configuration values
+var pi = 3.14159; // Example of a constant
+console.log(pi); // 3.14159
+// const can also be used with objects and arrays, but the properties or elements can still be modified
+var myObject = { name: "Alice", age: 25 };
+console.log(myObject); // { name: "Alice", age: 25 }
+myObject.age = 26; // Modifying a property of a const object
+console.log(myObject); // { name: "Alice", age: 26 }
+// const for function declaration
+// 
+var myFunction1 = function () {
+    console.log("Hello, World!");
+};
