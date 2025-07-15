@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: poppins, sans-serif;
+    font-size: 12px;
+    counter-reset: number;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px 50px;
+    background-color: #080a0b;
+    color: rgb(213, 222, 228);
+    overflow: hidden;
+}
+
+h2 {
+    color: white;
+}
+
+ol {
+    margin-top: 10px;
+    padding-left: 30px;
+    list-style: none;
+}
+
+ol li {
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    counter-increment: numbers;
+}
+
+li:before {
+    content: counter(numbers);
+    display: flex;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background-color: #076eed;
+    color: white;
+    position: absolute;
+    left: -23px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    font-weight: bold;
+
+    /* padding-right: 8px;
+            text-decoration: none !important;
+            
+            vertical-align: 20%; */
+}
+
+/* ol li :before {
+            content: counter(numbers);
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+            background-color: #076eed;
+            color: white;
+            position: absolute;
+            left: -30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            font-weight: bold;
+        } */
+
+h1 {
+    position: relative;
+    width: max-content;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 100px;
+    transition: 1000ms;
+}
+
+h1:hover::after {
+    /* width: 0; */
+    background: linear-gradient(to right, blue, red);
+    transition: 1000ms;
+}
+
+button {
+    padding: 1em 3em;
+    font-size: bold 1.2em;
+    border: none;
+    border-radius: 2px;
+    background: linear-gradient(to right, #2abfff, #0071FF);
+    color: white;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    /* transition: background-color 0.3s; */
+    font-family: poppins, sans-serif;
+     height: 50px;
+     width: 200px;
+}
+
+button:after {
+    content: '▶';
+    background: linear-gradient(to right, #ffee00, #ffb300);
+    height: 100%;
+    width: 0;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 150ms ease-in-out;
+    transition: width 0.3s;
+}
+button:hover:after {
+    width: 100%;
+}
+
+button:hover {
+    background-color: black;
+}
+
+h1 {
+    position: relative;
+    width: max-content;
+}
+
+hr {
+    left: 0;
+    bottom: 0px;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 100px;
+   
+    width: 100%;
+    border: none;
+}

@@ -1,113 +1,20 @@
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>class Example</title>
     <script src="class.js"></script>
     <!-- <script src="object.js"></script> -->
+    <link rel="stylesheet" href="style.css" />
     <style type="text/css">
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        html {
-            font-family: poppins;
-            font-size: 12px;
-            counter-reset: number;
-        }
-
-        body {
-            min-height: 100vh;
-            padding: 20px 50px;
-            background-color: #080a0b;
-            color: rgb(213, 222, 228);
-            overflow: hidden;
-        }
-
-        h2 {
-            color: white;
-        }
-
-        ol {
-            margin-top: 10px;
-            padding-left: 30px;
-            list-style: none;
-        }
-
-        ol li {
-            margin-top: 5px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            counter-increment: numbers;
-        }
-
-        li:before {
-            content: counter(numbers);
-            display: flex;
-            border-radius: 50%;
-            height: 16px;
-            width: 16px;
-            background-color: #076eed;
-            color: white;
-            position: absolute;
-            left: -23px;
-            align-items: center;
-            justify-content: center;
-             font-size: 0.7em;
-            font-weight: bold;
-            
-            /* padding-right: 8px;
-            text-decoration: none !important;
-            
-            vertical-align: 20%; */
-        }
-
-        /* ol li :before {
-            content: counter(numbers);
-            border-radius: 50%;
-            height: 16px;
-            width: 16px;
-            background-color: #076eed;
-            color: white;
-            position: absolute;
-            left: -30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7em;
-            font-weight: bold;
-        } */
-
-        h1 {
-            position: relative;
-            width: max-content;
-        }
-
-        h1::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0px;
-            height: 4px;
-            width: 100%;
-            background: linear-gradient(to right, red, blue);
-            border-radius: 100px;
-            transition: 500ms;
-        }
-
-        h1:hover::after {
-            width: 0;
-            /* background: linear-gradient(to right, blue, red); */
-        }
     </style>
 </head>
 
 <body>
     <h1>My TypeScript Demo</h1>
-
+    <br />
     <h2>Topics Covered</h2>
     <ol>
         <li>Introduction to TypeScript</li>
@@ -115,7 +22,13 @@
         <li>Advanced TypeScript Concepts</li>
         <li>TypeScript Interfaces</li>
         <li>TypeScript Classes</li>
+        <li>TypeScript Generics</li>
+        <li>TypeScript Decorators</li>
     </ol>
+    <br />
+    <hr />
+    <br />
+    <button type="button">Start Learning</button>
 </body>
 
 </html>
