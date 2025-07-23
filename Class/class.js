@@ -189,3 +189,32 @@ bmwX5.displayDetails();
 var bmwX3 = new BMWX3("BMW", "X3", 2022, "White", false);
 bmwX3.start();
 bmwX3.displayDetails();
+var Student = /** @class */ (function () {
+    function Student() {
+    }
+    Student.prototype.display = function () {
+        console.log("Student Name: " + this._name);
+        console.log("School: " + Student.school);
+    };
+    Object.defineProperty(Student.prototype, "GetName", {
+        get: function () {
+            return this._name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Student.prototype, "SetName", {
+        set: function (value) {
+            this._name = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Student.school = "ABC High School";
+    return Student;
+}());
+var student1 = new Student();
+student1.SetName = "Alice";
+student1.display();
+console.log(student1.GetName); // Accessing the name property using getter
+console.log(Student.school); // Accessing the static property

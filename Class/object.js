@@ -127,3 +127,40 @@ console.log(myObject); // { name: "Alice", age: 26 }
 var myFunction1 = function () {
     console.log("Hello, World!");
 };
+console.log("regular expression demo ");
+// Regular expressions are used for pattern matching in strings
+// They can be used to validate input, search for patterns, or replace text 
+var cell = "1234567890";
+var reg = /[0-9]{10}/;
+if (cell.match(reg)) {
+    console.log("Valid cell number");
+}
+else {
+    console.log("Invalid cell number");
+}
+var password = "password123";
+var passwordReg = /(?=.*[A-Z])\w{4,10}/;
+if (password.match(passwordReg)) {
+    console.log("Valid password");
+}
+else {
+    console.log("Invalid password");
+}
+var expiryDate = new Date("2023-10-31");
+console.log(expiryDate); // Output: 2023-10-31T00:00:00.000Z    
+console.log(expiryDate.toISOString()); // Output: 2023-10-31T00:00:00.000Z
+console.log(expiryDate.toJSON()); // Output: 2023-10-31
+console.log(expiryDate.toString()); // Output: Wed Oct 31 2023
+console.log(expiryDate.toLocaleString()); // Output: Wed, 31 Oct 2023
+console.log(expiryDate.toLocaleDateString()); // Output: 31/10/202
+console.log(expiryDate.toLocaleTimeString()); // Output: 00:00:00
+console.log(expiryDate.getFullYear()); // Output: 2023
+console.log(expiryDate.getMonth()); // Output: 9 (October, as months are
+// zero-based)
+console.log(expiryDate.getDate()); // Output: 31    
+console.log(expiryDate.getDay()); // Output: 4 (Thursday)
+console.log(expiryDate.getHours()); // Output: 0
+console.log(expiryDate.getMinutes()); // Output: 0
+console.log(expiryDate.getSeconds()); // Output: 0
+console.log(expiryDate.setDate(15)); // Sets the date to 15th of the month
+console.log(expiryDate); // Output: 2023-10-15T00:00:00.000Z

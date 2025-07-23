@@ -263,3 +263,25 @@ bmwX5.displayDetails();
 var bmwX3 = new BMWX3("BMW", "X3", 2022, "White", false);
 bmwX3.start();
 bmwX3.displayDetails();
+
+class Student{
+    private _name: string;
+    static school: string = "ABC High School";
+
+    display(){
+        console.log("Student Name: " + this._name);
+        console.log("School: " + Student.school);
+    }
+    get GetName(): string {
+        return this._name;
+    }
+    set SetName(value: string) {
+        this._name = value;
+    }
+}
+
+var student1 = new Student();
+student1.SetName = "Alice";
+student1.display();
+console.log(student1.GetName); // Accessing the name property using getter
+console.log(Student.school); // Accessing the static property
