@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var student = {
     fullName: "John Doe",
     age: 20,
@@ -164,3 +179,70 @@ console.log(expiryDate.getMinutes()); // Output: 0
 console.log(expiryDate.getSeconds()); // Output: 0
 console.log(expiryDate.setDate(15)); // Sets the date to 15th of the month
 console.log(expiryDate); // Output: 2023-10-15T00:00:00.000Z
+//error handlling
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed.");
+    }
+    return a / b;
+}
+console.log("Error handling demo");
+try {
+    console.log(divide(10, 2)); // Output: 5
+    console.log(divide(10, 0)); // This will throw an error
+}
+catch (error) {
+    console.error("An error occurred:", error.message); // Output: An error occurred: Division by zero is not allowed.
+}
+finally {
+    console.log("Finally block executed.");
+}
+function randomGenerator() {
+    var randomNumber = Math.random(); // Generates a random number between 0 and 1
+    console.log("Random number:", randomNumber);
+    if (randomNumber < 0.5) {
+        throw new TypeError("Random number is less than 0.5");
+    }
+    else {
+        throw new RangeError("Random number is greater than or equal to 0.5");
+    }
+}
+try {
+    randomGenerator();
+}
+catch (error) {
+    if (error instanceof TypeError) {
+        console.error("TypeError caught:", error.message);
+    }
+    else if (error instanceof RangeError) {
+        console.error("RangeError caught:", error.message);
+    }
+    else {
+        console.error("Unknown error caught:", error.message);
+    }
+}
+finally {
+    console.log("Finally block executed.");
+}
+//custome error
+var CustomError = /** @class */ (function (_super) {
+    __extends(CustomError, _super);
+    function CustomError(message) {
+        var _this = _super.call(this, message) || this;
+        _this.name = "CustomError"; // Set the name of the error
+        return _this;
+    }
+    return CustomError;
+}(Error));
+// Function that throws a custom error
+function throwCustomError() {
+    throw new CustomError("This is a custom error message.");
+}
+try {
+    throwCustomError();
+}
+catch (error) {
+    if (error instanceof CustomError) {
+        console.error("CustomError caught:", error.message);
+    }
+}

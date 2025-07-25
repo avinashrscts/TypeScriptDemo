@@ -185,3 +185,69 @@ console.log(expiryDate.getMinutes()); // Output: 0
 console.log(expiryDate.getSeconds()); // Output: 0
 console.log(expiryDate.setDate(15)); // Sets the date to 15th of the month
 console.log(expiryDate); // Output: 2023-10-15T00:00:00.000Z
+
+//error handlling
+
+function divide(a:number,b:number): number {
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed.");
+    }
+    return a / b;
+}
+
+console.log("Error handling demo");
+try {
+    console.log(divide(10, 2)); // Output: 5
+    console.log(divide(10, 0)); // This will throw an error
+} catch (error) {
+    console.error("An error occurred:", error.message); // Output: An error occurred: Division by zero is not allowed.
+} finally {
+    console.log("Finally block executed.");
+}   
+
+function randomGenerator(){
+    var randomNumber = Math.random(); // Generates a random number between 0 and 1
+    console.log("Random number:", randomNumber);
+
+    if(randomNumber < 0.5) {
+        throw new TypeError("Random number is less than 0.5");
+    } else {
+        throw new RangeError("Random number is greater than or equal to 0.5");
+    }
+}
+
+
+try {
+    randomGenerator();
+} catch (error) {
+    if (error instanceof TypeError) {
+        console.error("TypeError caught:", error.message);
+    } else if (error instanceof RangeError) {   
+        console.error("RangeError caught:", error.message);
+    } else {
+        console.error("Unknown error caught:", error.message);
+    }
+} finally {
+    console.log("Finally block executed.");
+}
+
+//custome error
+class CustomError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "CustomError"; // Set the name of the error
+    }
+}
+
+// Function that throws a custom error
+function throwCustomError() {
+    throw new CustomError("This is a custom error message.");
+}
+
+try {
+    throwCustomError();
+}catch (error) {
+    if (error instanceof CustomError) {
+        console.error("CustomError caught:", error.message);
+    }
+}
